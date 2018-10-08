@@ -1,6 +1,6 @@
-# AWS Amplify Vue Starter
+# AWS Amplify Vue Starter Chat sample with AWS AppSync
 
-A VueJs starter app integrated with [aws-amplify](https://github.com/aws/aws-amplify). **Please submit issues to the [aws-amplify](https://github.com/aws/aws-amplify/issues) repository**.
+A VueJs starter app integrated with [aws-amplify](https://github.com/aws/aws-amplify) and AWS AppSync based on [aws-samples/aws-amplify-vue](https://github.com/aws-samples/aws-amplify-vue).
 
 <img src="docs/assets/img/aws-amplify-vue-sample.png" width="480px" />
 
@@ -13,11 +13,11 @@ A VueJs starter app integrated with [aws-amplify](https://github.com/aws/aws-amp
 
 ## Getting Started
 
-1. Clone project and install dependencies    
+1. Clone project and install dependencies
 
 ```bash
-$ git clone https://github.com/aws-samples/aws-amplify-vue.git
-$ cd aws-amplify-vue-sample
+$ git clone https://github.com/r3-yamauchi/aws-amplify-vue-chat.git
+$ cd aws-amplify-vue-chat
 $ npm install
 ```
 
@@ -57,7 +57,7 @@ $ Do you want to generate code for your newly created GraphQL API N
 
 ```
 
-3. Start the project    
+3. Start the project
 
 ```bash
 $ npm start
@@ -66,83 +66,13 @@ $ npm start
 Check http://localhost:8080/
 
 
-### Setup AWS Amplify
-
-It is recommended to configure Amplify library at the entry point of application. Here we choose `main.js`
-
-```js
-import Amplify from 'aws-amplify';
-import { components } from 'aws-amplify-vue'; 
-import aws_exports from './aws-exports'
-
-...
-
-Amplify.configure(aws_exports)
-
-...
-
-new Vue({
-  el: '#app',
-  router: router,
-  template: '<App/>',
-  components: { 
-    App,
-    ...components
-  }
-})
+4. Edit your `aws-exports` file in the src directory. Change AWS AppSync API endpoint to another "Chat App" api created by "Start from a sample project" on AWS AppSync management console.:
 
 ```
-
-We then install the AmplifyPlugin in the application's ```router/index.js``` file:
-
-```
-import { AmplifyPlugin } from 'aws-amplify-vue';
-
-...
-
-
-Vue.use(AmplifyPlugin, AmplifyModules);
-
+    "aws_appsync_graphqlEndpoint": "https://1abcde2fghij3klmnopqrs4tuv.appsync-api.ap-northeast-1.amazonaws.com/graphql",
 ```
 
-This makes the Amplify library available throughout the application as a Vue Plugin.
-
-### Authentication Components
-
-This sample uses three auth-related components from the `aws-amplify-vue` package:
-
-* Authenticator
-  - allows new users to signup, signin, and complete verification/multifactor authentication steps.
-  - included in the router as the default route that is shown when the user is not logged in.
-
-* SetMFA
-  - included in the profile page
-  - allows users to select their preferred MFA types
-  - you can configure the MFA options that are dispayed in the SetMFA component by binding a mfaConfig object to the component like so:
-  ```
-  <amplify-set-mfa v-bind:mfaConfig="mfaConfig"></amplify-set-mfa>
-
-  ...
-
-  mfaConfig = {
-    mfaTypes: ['SMS', 'TOTP', 'None']
-  }
-  
-  ```
-
-### Storage Components
-
-In this sample, `src/amplify` package register a group of Amplify related components. Other than Auth components, there are two storage related components:
-
-* PhotoPicker
-  - showcase usage of Amplify Storage on binary data uploads
-* S3Image
-  - showcase usage of Amplify Storage on binary data display
-
-### Logging
-
-This application uses verbose [logging](https://aws-amplify.github.io/amplify-js/media/logger_guide#logger) by default.  You can change the log level by altering the line ```window.LOG_LEVEL = 'VERBOSE';``` in ```App.vue```.
 
 ## License
 
-This library is licensed under the Apache 2.0 License. 
+This library is licensed under the Apache 2.0 License.
