@@ -2,7 +2,7 @@
 
 A VueJs starter app integrated with [aws-amplify](https://github.com/aws/aws-amplify) and AWS AppSync based on [aws-samples/aws-amplify-vue](https://github.com/aws-samples/aws-amplify-vue).
 
-<img src="docs/assets/img/aws-amplify-vue-sample.png" width="480px" />
+<img src="docs/assets/img/aws-amplify-vue-sample.png" width="880px" />
 
 * [Getting Started](#getting-started)
 * [AWS Amplify Integration Explained](#aws-amplify-integration-explained)

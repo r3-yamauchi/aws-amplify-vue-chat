@@ -88,7 +88,14 @@ const router = new Router({
     {
       path: '/auth',
       name: 'Authenticator',
-      component: components.Authenticator
+      component: components.Authenticator,
+      props: {
+        'authConfig': {
+          'signUpConfig': {
+            'defaultCountryCode': '81'
+          }
+        }
+      }
     }
   ]
 });
