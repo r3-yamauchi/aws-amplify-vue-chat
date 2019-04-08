@@ -4,6 +4,8 @@ A VueJs starter app integrated with [aws-amplify](https://github.com/aws/aws-amp
 
 <img src="docs/assets/img/aws-amplify-vue-sample.png" width="880px" />
 
+[![Deploy to Amplify Console](docs/assets/img/Deploy_to_Amplify_Console.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/r3-yamauchi/aws-amplify-vue-chat)
+
 * [Getting Started](#getting-started)
 * [AWS Amplify Integration Explained](#aws-amplify-integration-explained)
   - [Setup AWS Amplify](#setup-aws-amplify)
